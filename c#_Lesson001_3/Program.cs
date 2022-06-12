@@ -2,9 +2,13 @@
 
 Console.Clear();
 Console.WriteLine("Это программа, которая на вход принимает число и выдаёт, является ли число чётным.");
+int number;
 Console.WriteLine("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-//Здесь бы сделать проверку, возможно, введено нецелое число или текст, но я пока не знаю как
+if (!int.TryParse(Console.ReadLine(), out number))
+    {
+    Console.Write("Ошибка ввода числа!");
+    return;
+    }
 if (number %2 == 0)
 {
     Console.WriteLine("Это число четное");

@@ -2,14 +2,19 @@
 
 Console.Clear();
 Console.WriteLine("Это программа, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.");
+int number;
 Console.WriteLine("Введите целое положительное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-//Здесь бы сделать проверку, возможно, введено нецелое число или текст, но я пока не знаю как
-if (number < 0)
+if (!int.TryParse(Console.ReadLine(), out number))
+    {
+    Console.Write("Ошибка ввода числа!");
+    return;
+    }
+if (number <= 0)
 {
-    Console.WriteLine("Вы ввели отрицательное число!");
+    Console.WriteLine("Вы ввели отрицательное число или ноль!");
+    return;
 }
-Console.WriteLine();
+Console.WriteLine("Все четные числа");
 int x = 2;
 while (x <= number)
 {

@@ -15,11 +15,10 @@ WriteLine ($"Сумма цифр в числе {number} равна {SumNumInNum(
 
 int SumNumInNum(int x)
 {
-int sum, a;
-for (sum = 0; x != 0; a = 0)
+int sum;
+for (sum = 0; x != 0;)
 {
-    a = x % 10;
-    sum += a;
+    sum += x % 10;
     x/=10;
 }
 return (Math.Abs(sum));
